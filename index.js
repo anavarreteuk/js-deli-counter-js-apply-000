@@ -1,24 +1,23 @@
+var number = 0
 
-
-function takeANumber(katzDeliLine, newname) {
-var katzDeli = [];
-katzDeliLine.push(newname);
-return `Welcome, ${newname}. You are number ${katzDeliLine.length} in line.`;
+function takeANumber(katzDeliLine) {
+  number++
+  katzDeliLine.push(number);
+  return `Welcome, you are ticket number ${number}.`;
 }
 
 function nowServing(katzDeliLine) {
-  var katzDeli = [];
   if(katzDeliLine.length === 0) {
-  return "There is nobody waiting to be served!";
-}
-return `Currently serving ${katzDeliLine.shift()}.`;
+    return "There is nobody waiting to be served!";
+  }
+  return `Currently serving ${katzDeliLine.shift()}.`;
 }
 
 function currentLine(katzDeliLine) {
   if(katzDeliLine.length === 0) {
     return "The line is currently empty.";
   }
-var numbersAndNames = [];
+  var numbersAndNames = [];
 
   for (let i = 0; i < katzDeliLine.length; i++) {
     numbersAndNames.push(`${i + 1}. ${katzDeliLine[i]}`);
